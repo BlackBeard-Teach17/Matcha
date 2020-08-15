@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: exabanis
- * Date: 2019/05/24
- * Time: 22:14
- */
-
     session_start();
     include('db.php');
     // DROP DATABASE
