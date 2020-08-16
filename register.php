@@ -56,30 +56,30 @@ session_start();
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="email" class="form-control" id="signupEmail" name="Email"
-                                           placeholder=" Email address" required>
+                                htmlspecialchars (<input type="email" class="form-control" id="signupEmail" name="Email"
+                                           placeholder=" Email address" required>)
                                     <span id="email-info"></span>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="text" class="form-control" id="username" name="Username"
-                                           placeholder="  Username" required>
+                                htmlspecialchars (<input type="text" class="form-control" id="username" name="Username"
+                                           placeholder="  Username" required>)
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="text" class="form-control" id="firstname" name="Firstname"
-                                           placeholder="  First Name" required>
+                                htmlspecialchars (<input type="text" class="form-control" id="firstname" name="Firstname"
+                                           placeholder="  First Name" required>)
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="text" class="form-control" id="lastname" name="Lastname"
-                                           placeholder="  Last Name" required>
+                                htmlspecialchars (<input type="text" class="form-control" id="lastname" name="Lastname"
+                                           placeholder="  Last Name" required>)
                                 </div>
                             </div>
 
@@ -124,22 +124,22 @@ session_start();
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="password" class="form-control" id="password1" name="Password"
-                                           placeholder="Password" required>
+                                htmlspecialchars ( <input type="password" class="form-control" id="password1" name="Password"
+                                           placeholder="Password" required>)
                                 </div>
                                 <span id="password-info"></span>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="password" class="form-control" id="password2" name="cPassword"
-                                           placeholder="Confirm Password" required>
+                                htmlspecialchars ( <input type="password" class="form-control" id="password2" name="cPassword"
+                                           placeholder="Confirm Password" required>)
                                 </div>
                                 <span id="password-info"></span>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="text" id="location" name="location" style="visibility: hidden">
+                                htmlspecialchars ( <input type="text" id="location" name="location" style="visibility: hidden">)
                                 </div>
                             </div>
 

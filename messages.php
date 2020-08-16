@@ -73,9 +73,9 @@ if(!isset($_SESSION['id'])){
                                             $_SESSION['receiver_id'] = $details['id'];
                                             echo "<div class='chat_list active_chat' id='active' title='" . $details['id'] . "' onclick='switch_on(this.title,this.id)'>";
                                         } else if ($_SESSION['receiver_id'] != null && $details['id'] == $_SESSION['receiver_id']) {
-                                            echo "<div class='chat_list active_chat' id='active' title='" . $details['id'] . "' onclick='switch_on(this.title,this.id)'>";
+                                            echo "<div class='chat_list active_chat' id='active' title='" htmlspecialchars(. $details['id'] .) "' onclick='switch_on(this.title,this.id)'>";
                                         } else
-                                            echo "<div class='chat_list' title='" . $_SESSION['receiver_id'] . "' id='" . $details['id'] . "' onclick='switch_on(this.title,this.id)'>";
+                                            echo "<div class='chat_list' title='" . $_SESSION['receiver_id'] . "' id='"htmlspecialchars(. $details['id'] .) "' onclick='switch_on(this.title,this.id)'>";
                                         ?>
                                             <div class='chat_people' id='switch_convo'>
                                             <div class='chat_img'><img src='<?php
@@ -87,7 +87,7 @@ if(!isset($_SESSION['id'])){
                                         ?>' alt='profile_pic'></div><?php
                                             echo "<div class='chat_ib'>
                                                         <h5>
-                                                        <a style='text-decoration: none;' href='http://localhost:8080/matcha/user_profile.php?id=" . $details['id'] . "'>" . $details['username'] . "</a><span class='chat_date'>" . $details['last_seen'] . "</span></h5>
+                                                        <a style='text-decoration: none;' href='http://localhost:8080/matcha/user_profile.php?id=" htmlspecialchars(. $details['id'] . )"'>" htmlspecialchars(. $details['username'] .) "</a><span class='chat_date'>" . $details['last_seen'] . "</span></h5>
                                                         <p>" . $details['profile_status'] . "</p>
                                                     </div>
                                                 </div>
@@ -107,12 +107,15 @@ if(!isset($_SESSION['id'])){
                         </div>
                         <div class="type_msg">
                             <div class="input_msg_write">
+                            <?php 
                                 <form action="funcs/send_msg.php" method="POST" id="send_msg">
-                                    <input type="text" name="msg" class="write_msg" placeholder="Type a message"/>
+                                htmlspecialchars (<input type="text" name="msg" class="write_msg" placeholder="Type a message"/>)
                                     <button id="sendButton" class="msg_send_btn" name="submit" type="submit">
                                         <i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i>
                                     </button>
                                 </form>
+                            
+                            ?>
                         </div>
                     </div>
                 </div>

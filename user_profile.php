@@ -173,15 +173,15 @@
                                             if($p->check_column($other_id,$d)){
                                                 if($other_id == $_SESSION['id'] && $d != "famerating"){
                                                     if ($d == "age")
-                                                        echo '<input type="number" name="'.$d.'" value="'.$p->get_column($other_id,$d).'">';
+                                                        echo '<input type="number" name="'htmlspecialchars(.$d.)'" value="'.$p->get_column($other_id,$d).'">';
                                                     else
-                                                        echo '<input type="text" name="'.$d.'" value="'.$p->get_column($other_id,$d).'">';
+                                                        echo '<input type="text" name="'htmlspecialchars(.$d.)'" value="'.$p->get_column($other_id,$d).'">';
                                                 } else
                                                     echo $p->get_column($other_id,$d);
                                             }
                                             else{
                                                 if($other_id == $_SESSION['id'] && $d != "email" && $d != "famerating"){
-                                                    echo '<input type="text" name="'.$d.'" value="Not Shared">';
+                                                    echo '<input type="text" name="'htmlspecialchars(.$d.)'" value="Not Shared">';
                                                 } else
                                                     echo 'Not Shared';
                                             }

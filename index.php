@@ -55,7 +55,7 @@ if(!isset($_SESSION['id'])){
 						<div id="sort" style="border: 1px solid #ccc; box-shadow: 1px 1px 1px #ccc; padding: 10px;" <?php echo 'align="center"';?>>
 							<?php
                                 if(isset($_POST['search']) && !empty($_POST['search_user'])){
-                                    $p->search_user($_POST['search_user'], $user_id);
+                                    $p->search_user($_POST[htmlspecialchars('search_user')], $user_id);
                                 }else if (isset($_POST['submit']) && $_POST["submit"] == "selectFilter" && isset($_POST["optradio5"]) || isset($_POST["order"]) == "rate"  || isset($_POST["order"]) == "age"){
 									if ($_POST["optradio5"] == "sortAge" || $_POST["optradio5"] == "sortFame"){
 										$p->filter_age_rate($user_id);
