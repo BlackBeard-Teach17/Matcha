@@ -43,7 +43,7 @@
             $subject = ' Matcha Signup | Verification'; // Give the email a subject 
             $message = '
             
-            Welcome to Matcha '.ucfirst($username).'!
+            Welcome to Matcha 'htmlspecialchars(.ucfirst($username).)'!
             
             Your account has been created, you can login with your credentials after you have activated your account by clicking the url below.
             
@@ -214,7 +214,7 @@
                             }
                             else if ($i['status'] == 'unread' && $i['thenotification'] == 'report')
                             {
-                                echo "WTF if you do this again, we will ban you ".$user['username']."!!!";
+                                echo "Your profile has been temporarily suspended ".$user['username']."!!!";
                             }
                         }
                         ?>
@@ -562,7 +562,7 @@
                 $result = $stmt->fetchObject();
                 if(empty($result->$column))
                 {
-                return false;
+                    return false;
                 }
                 else
                 {
@@ -880,7 +880,7 @@
                             <div class='incoming_msg_img'> <img src='".$pro_pic."' alt='sunil'> </div>
                             <div class='received_msg'>
                                 <div class='received_withd_msg'><i class=\"fa fa-bolt\"></i>
-                                    <p>".$msg['message']."</p>
+                                    <p>"htmlspecialchars(.$msg['message'].)"</p>
                                     <span class='time_date'>".$msg['sent_time']."</span>
                                 </div>
                             </div>
@@ -888,7 +888,7 @@
                 } else {
                     echo "<div class='outgoing_msg'>
                             <div class='sent_msg'><i class=\"fa fa-bolt\"></i>
-                                <p>".$msg['message']."</p>
+                                <p>"htmlspecialchars(.$msg['message'].)"</p>
                                 <span class='time_date'>".$msg['sent_time']."</span>
                             </div>
                         </div>";
